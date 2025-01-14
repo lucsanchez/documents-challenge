@@ -6,8 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prettier:fix": "prettier --write 'src/**/*.{html, ts,tsx, css, scss, md, json}'",
+    "lint:fix": "npm run eslint:fix && npm run prettier:fix",
+    "lint": "npm run lint:eslint && npm run lint:prettier",
+    "lint:eslint": "eslint . --report-unused-disable-directives --max-warnings 0",
+    "lint:prettier": "prettier --log-level=log --check './src/**/*.{html,ts,tsx,css,scss,md,json}'"
   },
   "dependencies": {
     "@types/react-router-dom": "^5.3.3",
