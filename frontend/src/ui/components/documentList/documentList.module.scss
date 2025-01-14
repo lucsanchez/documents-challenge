@@ -1,0 +1,26 @@
+.gridContainer {
+  display: grid;
+  grid-auto-rows: 1fr;
+  grid-template-columns: 1fr;
+  gap: 20px;
+
+  @include from-screen(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.listHeaders {
+  display: flex;
+  padding: 16px;
+}
+
+.headerTitle {
+  flex: 1;
+  color: #5a5858;
+}

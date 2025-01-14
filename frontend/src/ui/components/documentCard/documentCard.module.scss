@@ -1,0 +1,28 @@
+%flex_column {
+  flex-direction: column;
+}
+
+.card {
+  display: flex;
+  padding: 16px;
+  gap: 16px;
+  background-color: white;
+}
+
+.column {
+  @extend %flex_column;
+  text-align: center;
+  align-items: center;
+}
+
+.title {
+  font-weight: 700;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+  gap: 4px;
+
+  @extend %flex_column;
+}
