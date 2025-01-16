@@ -27,7 +27,7 @@ export function DocumentCard({ document }: DocumentCardProps) {
 
       <div className={styles.container}>
         {document.attachments.map((attachment) => (
-          <p>{attachment}</p>
+          <p key={attachment}>{attachment}</p>
         ))}
       </div>
     </div>

@@ -2,6 +2,8 @@ import { DocumentRepository } from "../../domain/repositories/DocumentRepository
 import { Document, Contributor } from "../../domain/entities/Document";
 import { ApiDocumentResponse, ApiContributorResponse } from "./types";
 
+const DOCUMENT_API_URL = import.meta.env.VITE_DOCUMENTS_BACKEND_URL;
+
 const mapDocumentResponse = (response: ApiDocumentResponse): Document => {
   return {
     id: response.ID,
@@ -21,13 +23,16 @@ const mapDocumentResponse = (response: ApiDocumentResponse): Document => {
 
 export const documentApi: DocumentRepository = {
   getDocuments: async (): Promise<Document[]> => {
-    const response = await fetch("/api/documents");
+    const response = await fetch(DOCUMENT_API_URL);
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
     const data = await response.json();
 
     return data.map(mapDocumentResponse);
   },
   createDocument: async (document: Document): Promise<Document> => {
-    const response = await fetch("/api/documents", {
+    const response = await fetch(DOCUMENT_API_URL, {
       method: "POST",
       body: JSON.stringify(document),
       headers: { "Content-Type": "application/json" }

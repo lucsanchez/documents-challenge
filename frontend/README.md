@@ -1,50 +1,52 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern minimal Vite + React + TypeScript template with pre-configured ESLint. Testing with vitest and react-testing-library
 
-Currently, two official plugins are available:
+![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+State management with React Context api
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Node version 18+
 
-- Configure the top-level `parserOptions` property like this:
+## Getting started
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- Clone this repo
+
+```
+git clone https://github.com/lucsanchez/documents-challenge.git
+cd marvel
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- Install all dependencies
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+  ```
+  npm install
+  ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- Now run **npm run dev**
+
+- Open your browser at [http://localhost:5173](http://localhost:5173/)
+- Enjoy!
+
+  ## Available commands
+
+<p>In this project, you can run the following scripts:</p>
+
+| Script        | Description                                         |
+| ------------- | --------------------------------------------------- |
+| npm run dev   | Runs the app in the development mode.               |
+| npm run build | Builds the app for production to the `dist` folder. |
+| npm run test  | Runs unit tests                                     |
+
+## Making requests to the backend API
+
+Create a .env file with following variables  
+VITE_NOTIFICATION_BACKEND_URL and
+VITE_DOCUMENTS_BACKEND_URL, /assets/example.json could be used here as a mock
+
+Here a guide to set up server
+[https://github.com/holdedhub/careers/tree/main/challenges/frontend/server](Server)
