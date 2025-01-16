@@ -52,3 +52,10 @@ VITE_DOCUMENTS_BACKEND_URL, /assets/example.json could be used here as a mock
 
 Here a guide to set up server
 [https://github.com/holdedhub/careers/tree/main/challenges/frontend/server](Server)
+
+## Functional overview
+
+There are 2 main pages
+
+- Home page
+- Add document Page
