@@ -16,7 +16,10 @@ function isValidFileType(fileName: string) {
 
 export const documentSchema = yup.object().shape({
   title: yup.string().required("Title is required"),
-  version: yup.string().required("Version is required"),
+  version: yup
+    .string()
+    .required("Version is required")
+    .matches(/^\d+\.\d+\.\d+$/, "Version format should be X.X.X"),
   attachments: yup
     .mixed<File[]>()
     .test(

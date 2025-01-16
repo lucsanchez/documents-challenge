@@ -10,7 +10,8 @@ export const useAddDocument = () => {
     control,
     formState: { errors, isValid }
   } = useForm<AddDocumentFormType>({
-    resolver: yupResolver(documentSchema)
+    resolver: yupResolver(documentSchema),
+    mode: "onBlur"
   });
 
   return { register, handleSubmit, control, errors, isValid };
