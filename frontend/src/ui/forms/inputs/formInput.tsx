@@ -1,10 +1,10 @@
-import { FieldError } from "react-hook-form";
-import { FormProps } from "./types";
+import { FieldError, FieldValues, UseFormRegister } from "react-hook-form";
 
 import styles from "./formImpit.module.scss";
 
-interface FormInputProps extends FormProps<T> {
+interface FormInputProps {
   id: string;
+  register: UseFormRegister<FieldValues>;
   label: string;
   error?: FieldError;
   type?: string;
