@@ -24,13 +24,13 @@ export function AddDocumentForm({
       className={styles.formContainer}
     >
       <FormInput
-        id="title"
+        name="title"
         label="Title"
         register={register}
         error={errors.title}
       />
       <FormInput
-        id="version"
+        name="version"
         label="Version"
         register={register}
         error={errors.version}

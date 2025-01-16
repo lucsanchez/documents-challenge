@@ -1,26 +1,31 @@
-import { FieldError, FieldValues, UseFormRegister } from "react-hook-form";
+import {
+  FieldError,
+  FieldValues,
+  Path,
+  UseFormRegister
+} from "react-hook-form";
 
 import styles from "./formImpit.module.scss";
 
-interface FormInputProps {
-  id: string;
-  register: UseFormRegister<FieldValues>;
+interface FormInputProps<T extends FieldValues> {
+  register: UseFormRegister<T>;
   label: string;
+  name: Path<T>;
   error?: FieldError;
   type?: string;
 }
 
-export function FormInput({
-  id,
+export function FormInput<T extends FieldValues>({
+  name,
   label,
   register,
   error,
   type = "text"
-}: FormInputProps) {
+}: FormInputProps<T>) {
   return (
     <div className={styles.formGroup}>
-      <label htmlFor={id}>{label}</label>
-      <input id={id} type={type} {...register(id)} />
+      <label htmlFor={name}>{label}</label>
+      <input id={name} type={type} {...register(name)} />
       {error && <p>{error.message}</p>}
     </div>
   );
