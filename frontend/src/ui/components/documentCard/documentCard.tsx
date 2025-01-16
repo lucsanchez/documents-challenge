@@ -21,7 +21,7 @@ export function DocumentCard({ document }: DocumentCardProps) {
       </div>
       <div className={styles.container}>
         {document.contributors.map((contributor) => (
-          <p>{contributor.name}</p>
+          <p key={`${document.id} ${contributor.id}`}>{contributor.name}</p>
         ))}
       </div>
 

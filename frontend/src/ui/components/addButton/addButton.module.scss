@@ -1,0 +1,19 @@
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+}
+
+.gridView {
+  display: grid;
+  grid-auto-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  color: blue;
+}

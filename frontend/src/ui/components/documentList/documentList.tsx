@@ -1,15 +1,13 @@
-import { Document } from "@/domain/entities/Document";
+import { useDocuments } from "@/ui/context/documentContext";
 import { DocumentCard } from "../documentCard/documentCard";
 
 import styles from "./documentList.module.scss";
 import { useViewContext } from "@/ui/context/viewContext";
+import { AddButton } from "../addButton/addButton";
 
-interface DocumentListProps {
-  documents: Document[];
-}
-
-export function DocumentList({ documents }: DocumentListProps) {
+export function DocumentList() {
   const { isGridView } = useViewContext();
+  const { documents } = useDocuments();
 
   return (
     <div className={styles.app}>
@@ -25,6 +23,7 @@ export function DocumentList({ documents }: DocumentListProps) {
           <DocumentCard key={item.id} document={item} />
         ))}
       </div>
+      <AddButton />
     </div>
   );
 }
