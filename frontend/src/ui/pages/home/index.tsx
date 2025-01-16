@@ -6,7 +6,7 @@ import { useViewContext } from "@/ui/context/viewContext";
 import { GridIcon } from "@/ui/icons/gridIcon";
 import { ListIcon } from "@/ui/icons/listIcon";
 import { listenToNewDocuments } from "@/services/socketService";
-import { useDocuments } from "@/ui/context/documentContext";
+import { useDocumentsContext } from "@/ui/context/documentContext";
 import { socket } from "@/services/socketService";
 import { SortByDropdown } from "@/ui/components/sortByDropdown/sortByDropdown";
 
@@ -15,7 +15,7 @@ import { Notification } from "@/ui/components/notification/notification";
 
 export const HomePage = () => {
   const { isGridView, toggleGridView, toggleListView } = useViewContext();
-  const { sortDocuments, sortBy } = useDocuments();
+  const { sortDocuments, sortBy } = useDocumentsContext();
   const [showNotification, setShowNotification] = useState(false);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export const HomePage = () => {
   return (
     <div>
       {showNotification && (
-        <Notification count={2} message="New notification added" />
+        <Notification count={1} message="New notification added" />
       )}
       <h1>Documents</h1>
 

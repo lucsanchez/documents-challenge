@@ -26,3 +26,9 @@
 
   @extend %flex_column;
 }
+
+.extraInformation {
+  align-self: flex-end;
+  color: #888;
+  font-size: 12px;
+}

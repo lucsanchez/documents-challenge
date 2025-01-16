@@ -1,4 +1,4 @@
-import { useDocuments } from "@/ui/context/documentContext";
+import { useDocumentsContext } from "@/ui/context/documentContext";
 import { DocumentCard } from "../documentCard/documentCard";
 
 import styles from "./documentList.module.scss";
@@ -7,7 +7,7 @@ import { AddButton } from "../addButton/addButton";
 
 export function DocumentList() {
   const { isGridView } = useViewContext();
-  const { documents } = useDocuments();
+  const { documents } = useDocumentsContext();
 
   return (
     <div className={styles.app}>

@@ -27,6 +27,8 @@ cd marvel
   npm install
   ```
 
+- cd frontend
+
 - Now run **npm run dev**
 
 - Open your browser at [http://localhost:5173](http://localhost:5173/)
