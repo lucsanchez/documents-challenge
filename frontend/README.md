@@ -58,4 +58,12 @@ Here a guide to set up server
 There are 2 main pages
 
 - Home page
+
+![image](https://github.com/user-attachments/assets/632bc403-29de-4dcc-9509-1f34e0cd2be0)
+
+![image](https://github.com/user-attachments/assets/da5eb886-a48d-4dd1-885e-ce545403733a)
+
+
 - Add document Page
+![image](https://github.com/user-attachments/assets/83979188-3085-4e73-8b53-05575a3ff630)
+
