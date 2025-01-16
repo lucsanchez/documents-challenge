@@ -18,7 +18,7 @@ Node version 18+
 
 ```
 git clone https://github.com/lucsanchez/documents-challenge.git
-cd marvel
+cd documents-challenge
 ```
 
 - Install all dependencies
