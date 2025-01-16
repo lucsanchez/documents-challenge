@@ -18,7 +18,7 @@ Node version 18+
 
 ```
 git clone https://github.com/lucsanchez/documents-challenge.git
-cd documents-challenge
+cd documents-challenge/frontend
 ```
 
 - Install all dependencies
