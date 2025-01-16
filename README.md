@@ -29,6 +29,15 @@ cd documents-challenge/frontend
 
 - cd frontend
 
+- ## Making requests to the backend API
+
+  Create a .env file with following variables  
+  VITE_NOTIFICATION_BACKEND_URL and
+  VITE_DOCUMENTS_BACKEND_URL, /assets/example.json could be used here as a mock
+  
+  Here a guide to set up server
+  [https://github.com/holdedhub/careers/tree/main/challenges/frontend/server](Server)
+
 - Now run **npm run dev**
 
 - Open your browser at [http://localhost:5173](http://localhost:5173/)
@@ -44,14 +53,6 @@ cd documents-challenge/frontend
 | npm run build | Builds the app for production to the `dist` folder. |
 | npm run test  | Runs unit tests                                     |
 
-## Making requests to the backend API
-
-Create a .env file with following variables  
-VITE_NOTIFICATION_BACKEND_URL and
-VITE_DOCUMENTS_BACKEND_URL, /assets/example.json could be used here as a mock
-
-Here a guide to set up server
-[https://github.com/holdedhub/careers/tree/main/challenges/frontend/server](Server)
 
 ## Functional overview
 
