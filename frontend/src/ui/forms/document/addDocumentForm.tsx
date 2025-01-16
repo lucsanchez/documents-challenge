@@ -2,6 +2,8 @@ import { FormInput } from "../inputs/formInput";
 import { AddDocumentFormType } from "./types";
 import { useAddDocument } from "./useAddDocument";
 import styles from "./addDocumentForm.module.scss";
+import { Controller } from "react-hook-form";
+import { FileDropzone } from "@/ui/components/dropzone/dropzone";
 
 interface AddDocumentFormProps {
   onSubmit: (data: AddDocumentFormType) => void;
@@ -10,7 +12,7 @@ interface AddDocumentFormProps {
 export function AddDocumentForm({
   onSubmit
 }: AddDocumentFormProps): JSX.Element {
-  const { register, handleSubmit, errors } = useAddDocument();
+  const { register, handleSubmit, isValid, errors, control } = useAddDocument();
 
   const handleFormSubmit = (data: AddDocumentFormType) => {
     onSubmit(data);
@@ -34,12 +36,21 @@ export function AddDocumentForm({
         error={errors.version}
       />
       <div>
-        <label htmlFor="attachments">Attachments</label>
-        <input id="attachments" type="file" {...register("attachments")} />
-        {errors.attachments && <p>{errors.attachments.message}</p>}
+        <Controller
+          name="attachments"
+          control={control}
+          render={({ field }) => (
+            <FileDropzone
+              onDrop={(acceptedFiles) => {
+                field.onChange([...(field.value || []), ...acceptedFiles]); // Agregar nuevos archivos
+              }}
+              attachments={field.value || []}
+            />
+          )}
+        />
       </div>
 
-      <button className={styles.submitButton} type="submit">
+      <button disabled={!isValid} className={styles.submitButton} type="submit">
         Submit
       </button>
     </form>

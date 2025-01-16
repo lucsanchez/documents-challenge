@@ -1,5 +1,5 @@
 export type AddDocumentFormType = {
   title: string;
   version: string;
-  attachments?: FileList;
+  attachments?: File[];
 };

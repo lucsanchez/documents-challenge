@@ -8,10 +8,10 @@ export const useAddDocument = () => {
     register,
     handleSubmit,
     control,
-    formState: { errors }
+    formState: { errors, isValid }
   } = useForm<AddDocumentFormType>({
     resolver: yupResolver(documentSchema)
   });
 
-  return { register, handleSubmit, control, errors };
+  return { register, handleSubmit, control, errors, isValid };
 };
