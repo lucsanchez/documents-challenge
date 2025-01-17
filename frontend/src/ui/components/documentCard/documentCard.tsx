@@ -5,7 +5,6 @@ import styles from "./documentCard.module.scss";
 
 import clsx from "clsx";
 import { formatDateToDaysAgo } from "@/ui/utils/dateUtils";
-import React from "react";
 
 interface DocumentCardProps {
   document: Document;
